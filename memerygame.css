@@ -1,0 +1,244 @@
+/* ------------------ FONT ------------------ */
+@import url('https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap');
+
+/* ------------------ BODY ------------------ */
+body {
+  text-align: center;
+  font-family: 'Press Start 2P', cursive;
+  color: #ffb347; /* Pumpkin orange */
+  background: url('images/bg.jpg') no-repeat center center fixed;
+  background-size: cover;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-start;
+  min-height: 100vh;
+  margin: 0;
+  padding-top: 20px;
+  position: relative;
+  overflow-x: hidden;
+}
+
+/* Dark overlay for contrast */
+body::before {
+  content: "";
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(10, 0, 10, 0.6);
+  z-index: -1;
+}
+
+/* ------------------ TITLE ------------------ */
+h1 {
+  margin-bottom: 5px;
+  letter-spacing: 1px;
+  background: linear-gradient(90deg, #ff7518, #ffcc00);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  text-shadow: 0 0 25px rgba(255, 136, 0, 0.8);
+}
+
+/* ------------------ GAME GRID ------------------ */
+#game {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(80px, 105px));
+  grid-gap: 10px;
+  perspective: 1000px;
+  justify-content: center;
+  margin-bottom: 0;
+}
+
+/* ------------------ CARDS ------------------ */
+.card {
+  width: 100%;
+  aspect-ratio: 1 / 1;
+  cursor: pointer;
+  position: relative;
+  transform-style: preserve-3d;
+  transition: transform 0.5s;
+}
+
+.card.flipped {
+  transform: rotateY(180deg);
+}
+
+/* Front + Back */
+.front,
+.back {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  border-radius: 10px;
+  backface-visibility: hidden;
+  overflow: hidden;
+  box-shadow: 0 0 15px rgba(255, 102, 0, 0.5);
+}
+
+/* Front */
+.front {
+  background: linear-gradient(145deg, #4b0082, #2e003e);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transform: rotateY(0deg);
+  border: 2px solid #ff7518;
+}
+
+.front img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  filter: brightness(0.85) contrast(1.2);
+}
+
+/* Back */
+.back {
+  transform: rotateY(180deg);
+  background: #111;
+  border: 2px solid #ffcc00;
+}
+
+.back img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+/* ------------------ BUTTONS ------------------ */
+.buttons-container {
+  margin-top: 20px;
+  display: flex;
+  gap: 10px;
+  justify-content: center;
+}
+
+button {
+  padding: 10px 20px;
+  border: 2px solid #ff7518;
+  background: #3b003b;
+  color: #ffcc66;
+  border-radius: 5px;
+  cursor: pointer;
+  font-weight: bold;
+  transition: all 0.3s ease;
+  box-shadow: 0 0 10px rgba(255, 136, 0, 0.3);
+}
+
+button:hover {
+  background: #ff7518;
+  color: #1a001a;
+  box-shadow: 0 0 20px rgba(255, 136, 0, 0.6);
+}
+
+/* ------------------ WIN MESSAGE (POP-UP) ------------------ */
+#win-message {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.7);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.3s ease;
+  z-index: 1000;
+}
+
+#win-message.show {
+  opacity: 1;
+  pointer-events: auto;
+}
+
+.win-content {
+  background: #2c002c;
+  padding: 30px;
+  border-radius: 10px;
+  text-align: center;
+  box-shadow: 0 0 20px rgba(255, 102, 0, 0.7);
+  border: 2px solid #ff7518;
+  transform: scale(0.9);
+  transition: transform 0.3s ease;
+}
+
+#win-message.show .win-content {
+    transform: scale(1);
+}
+
+.win-content h2 {
+  margin-bottom: 15px;
+}
+
+.win-content p {
+  margin-bottom: 20px;
+  font-size: 1.1em;
+}
+
+.win-content input {
+    display: block;
+    margin: 0 auto 15px;
+    padding: 10px;
+    border-radius: 5px;
+    border: 2px solid #ffcc00;
+    background: #111;
+    color: #ffcc66;
+    font-family: 'Press Start 2P', cursive;
+    text-align: center;
+}
+
+.win-content .btn {
+    margin: 5px;
+}
+
+
+/* ------------------ LEADERBOARD CONTAINER ------------------ */
+.leaderboard-section {
+  display: flex;
+  flex-direction: column;
+  align-items: center;       /* center horizontally */
+  justify-content: center;   /* optional: center vertically within section */
+  margin-top: 5px;
+  width: 100%;
+}
+
+/* Keep your table styles but center it */
+#leaderboard {
+  text-align: center;
+  max-width: 450px;
+  width: 100%;
+  background: rgba(30, 0, 30, 0.4);
+  border-radius: 10px;
+  padding: 10px;
+  box-shadow: 0 0 15px rgba(255, 102, 0, 0.3);
+}
+
+#leaderboard table {
+  width: 100%;
+  border-collapse: collapse;
+  color: #ffcc66;
+}
+
+#leaderboard th,
+#leaderboard td {
+  border-bottom: 1px solid rgba(255, 102, 0, 0.4);
+  padding: 6px;
+}
+
+/* ------------------ RESPONSIVE ------------------ */
+@media (max-width: 768px) {
+  #game {
+    grid-template-columns: repeat(4, minmax(60px, 80px));
+    grid-gap: 8px;
+  }
+  h1 {
+    font-size: 1.1em;
+  }
+  #leaderboard {
+    max-width: 380px;
+  }
+}

@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>👻 Memery Game 👻</title>
+
+  <!-- CSS -->
+  <link rel="stylesheet" href="memerygame.css" />
+
+  <!-- Favicon -->
+  <link rel="icon" href="favicon.ico" type="image/x-icon">
+
+  <!-- Meta Theme -->
+  <meta name="theme-color" content="#0a0a0a" />
+  <meta name="description" content="Memery Game — Flip, match, and climb the MeryCoin leaderboard!" />
+</head>
+
+<body>
+  <div class="container">
+    <header>
+      <h1>👻 Memery Game 👻</h1>
+      <div class="stats">
+        <span>Score: <strong id="score">0</strong></span>
+        <span>Time: <strong id="timer">0</strong>s</span>
+      </div> <br>
+    </header>
+
+    <!-- Game Board -->
+    <main>
+      <div id="game" class="game-board"></div>
+    </main>
+
+    <!-- Win Message -->
+    <div id="win-message" class="win-message">
+      <div class="win-content">
+        <h2>👻 You Matched Them All! 👻</h2>
+        <p id="final-score"></p>
+        <input type="text" id="player-name" placeholder="Enter your name">
+        <button id="play-again" class="btn">Play Again</button>
+      </div>
+    </div>
+
+    <!-- Leaderboard Section -->
+    <section class="leaderboard-section">
+      <h2>👻 Leaderboard 👻</h2>
+      <table id="leaderboard">
+        <thead>
+          <tr>
+            <th>Player</th>
+            <th>Score</th>
+            <th>Time</th>
+          </tr>
+        </thead>
+        <tbody id="leaderboard-body">
+          <!-- Live leaderboard rows appear here -->
+        </tbody>
+      </table>
+    </section>
+
+    <footer>
+      <P>Check our <strong>Website</strong> —
+        <a href="https://misteryoncro.io" target="_blank" rel="noopener noreferrer">MISTERYONCRO.IO</a></P>
+      <p>
+        Join us on <strong>Discord</strong> —
+        <a href="https://Discord.gg/mery" target="_blank" rel="noopener noreferrer">DISCORD.GG/MERY</a>
+      </p>
+      <p>
+        Join us on <strong>X</strong> —
+        <a href="https://x.com/Misteryoncro" target="_blank" rel="noopener noreferrer">MERYCOIN</a>
+      </p>
+      <p>
+        Join us on <strong>Tik Tok</strong> —
+        <a href="https://tiktok.com/@misteryoncro" target="_blank" rel="noopener noreferrer">@MISTERYONCRO</a>
+      </p>
+      <p>
+        Built with 💙 by a <strong>MeryFam</strong>
+      </p>
+    </footer>
+  </div>
+
+  <!-- JS Game Logic (Firebase + Live Leaderboard) -->
+  <script type="module" src="memerygame.js" defer></script>
+</body>
+</html>
