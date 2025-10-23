@@ -103,7 +103,6 @@ function initializeGame() {
   function flipCard(card) {
     if (lockBoard || card.classList.contains("flipped")) return;
     card.classList.add("flipped");
-    // playFlipSound(https://www.epidemicsound.com/sound-effects/tracks/71ec634b-df48-43f6-a80f-ebf2f5fa6d27); //
     flippedCards.push(card);
 
     if (flippedCards.length === 2) {
@@ -189,11 +188,9 @@ function initializeGame() {
   loadLeaderboard();
 }
 
-// Wait for the DOM to be fully loaded before doing anything
 document.addEventListener("DOMContentLoaded", () => {
   signInAnonymously(auth)
     .then(() => {
-      // User is signed in, and the DOM is ready. Now we can start the game.
       initializeGame();
     })
     .catch((error) => {
