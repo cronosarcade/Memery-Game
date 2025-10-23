@@ -108,7 +108,7 @@ function initializeGame() {
 
     if (flippedCards.length === 2) {
       lockBoard = true;
-      setTimeout(checkMatch, 500);
+      setTimeout(checkMatch, 650);
     }
   }
 
