@@ -74,7 +74,7 @@ function initializeGame() {
       document.getElementById("timer").textContent = time;
     }, 1000);
 
-    const cards = [...imageUrls, ...imageUrls].sort(() => 0.5 - Math.random());
+    const cards = [...imageUrls, ...imageUrls].sort(() => 0.7 - Math.random());
 
     cards.forEach(url => {
       const card = document.createElement("div");
@@ -103,7 +103,7 @@ function initializeGame() {
   function flipCard(card) {
     if (lockBoard || card.classList.contains("flipped")) return;
     card.classList.add("flipped");
-    // playFlipSound(); // Sound removed
+    playFlipSound(https://www.epidemicsound.com/sound-effects/tracks/71ec634b-df48-43f6-a80f-ebf2f5fa6d27/);
     flippedCards.push(card);
 
     if (flippedCards.length === 2) {
