@@ -36,17 +36,17 @@ function initializeGame() {
     "images/fallout.gif",
     "images/homer.gif",
     "images/hunter.gif",
-    "https://tenor.com/t19T1GuNXKa.gif",
+    "images/lambo.gif",
     "images/loadedlion.gif",
     "images/mario.gif",
     "images/merinem.gif",
     "images/mrT.gif",
     "images/pepe.gif",
-    "https://tenor.com/tQqBo4j3Jjk.gif",
+    "images/poppin.gif",
     "images/potter.gif",
     "images/superman.gif",
     "images/sonic.gif",
-    "https://tenor.com/njVkIQtmg63.gif"
+    "images/trump.gif"
   ];
   
   let imageUrls = [];
